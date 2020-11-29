@@ -1,11 +1,19 @@
 const express = require('express');
+const cors = require('cors');
 require('dotenv').config();
 const PORT = process.env.PORT || 4000;
+const routes = require('./routes');
+
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Whats up shit is actually working')
-})
+const corsOptions = {
+  origin: 'http://localhost:3000'
+};
+
+app.use(express.json());
+app.use(cors(corsOptions));
+app.use('/entries', routes.entries);
+
 
 app.listen(PORT, () => {
   console.log(`You are now listening to ${PORT}`);
