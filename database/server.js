@@ -14,6 +14,9 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use('/entries', routes.entries);
 
+app.get('/', function(req, res) {
+  res.send('We On')
+})
 
 app.listen(PORT, () => {
   console.log(`You are now listening to ${PORT}`);
