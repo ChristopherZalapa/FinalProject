@@ -5,12 +5,12 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-md navbar-light">
+        <nav className="navbar navbar-light">
           <a className="navbar-brand logo" href="/">Party Bucket List</a>
 
           <ul className="nav justify-content-end">
             <li className="nav-item">
-              <Link to='/' className="nav-link active">Home</Link>
+              <Link to='/' className="nav-link">Home</Link>
             </li>
             <li className="nav-item">
               <Link to='/entries' className="nav-link">Entries</Link>
