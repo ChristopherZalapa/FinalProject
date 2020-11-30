@@ -1,13 +1,17 @@
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Header from './components/Header';
 import './App.css';
-import EntryIndex from './pages/EntryIndex';
+// import EntryIndex from './pages/EntryIndex';
 
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello Bryan</h1>
-      <EntryIndex />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+      </div>
+    </Router>
   );
 }
 
