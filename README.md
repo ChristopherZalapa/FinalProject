@@ -1,5 +1,4 @@
 # Party Bucket List
----
 
 ## User Story
 
