@@ -1,20 +1,72 @@
 const db = require('../models');
 
 const index = (req, res) => {
-  db.User.find({}).then((foundUsers) => {
-    res.json({ users: foundUsers })
+  db.User.find({}, (err, allUsers) => {
+    if (err) return console.log(err);
+    
+    const context = {
+      users: allUsers,
+      title: 'All Users'
+    };
 
-  }).catch((err) => {
-    console.log('Error in users.index', err);
-    res.json({ Error: 'Unable to get your data' })
+    res.json(context);
 
   });
-
 };
 
+const show = (req, res) => {
+  db.User.findById(req.params.userId)
+    .populate('entries')
+    .exec((err, foundUser) => {
+      if (err) return console.log(err);
 
+      const context = {
+        user: foundUser,
+      };
 
+      res.json(context);
+    
+    });
+};
+
+const create = (req, res) => {
+  db.User.create(req.body, (err, newUser) => {
+    if (err) return console.log(err);
+
+    res.redirect('/users');
+
+  });
+};
+
+const update = (req, res) => {
+  db.User.findByIdAndUpdate(
+    req.params.userId,
+    req.body,
+    {new: true},
+    (err, updatedUser) => {
+      if (err) return console.log(err);
+
+      res.redirect(`/users/${updatedUser._id}`);
+    }
+  );
+};
+
+const destroy = (req, res) => {
+  db.User.findByIdAndDelete(req.params.userId, (err, deletedUser) => {
+    if (err) return console.log(err);
+
+    db.Entry.deleteMany({_id: { $in: deletedUser.entries }}, (err) => {
+      if (err) return console.log(err)
+
+      res.redirect('/users');
+    })
+  });
+};
 
 module.exports = {
   index,
+  show,
+  create,
+  update,
+  destroy
 }
