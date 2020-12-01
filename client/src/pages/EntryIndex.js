@@ -21,7 +21,6 @@ export default function EntryIndex() {
   return (
     <div>
       {entries}
-      
     </div>
   )
 }
