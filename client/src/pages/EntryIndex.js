@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import EntryCard from '../components/EntryCard';
 import EntryModel from '../models/entry';
 
 export default function EntryIndex() {
@@ -9,7 +10,7 @@ export default function EntryIndex() {
       const {entries} = response.data
       console.log(entries);
       const divEntries = entries.map((entry, index) => {
-        return <div key={index}>{entry.name}</div>
+        return <EntryCard entry={entry} key={index} />
       })
 
       setEntries(divEntries)
@@ -20,6 +21,7 @@ export default function EntryIndex() {
   return (
     <div>
       {entries}
+      
     </div>
   )
 }
