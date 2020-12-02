@@ -23,7 +23,7 @@ export default function UserIndex() {
   return (
     <div>
       { users }
-      <Link to={'/'} >
+      <Link to={'/users/:user/:userid'} >
         <button className="btn btn-primary">Create New User</button>
       </Link>
     </div>

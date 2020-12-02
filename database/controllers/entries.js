@@ -28,7 +28,8 @@ const show = (req, res) => {
 };
 
 const create = (req, res) => {
-
+  console.log(req.body);
+  
   db.Entry.create(req.body, (err, newEntry) => {
     if (err) return console.log(err);
 
@@ -42,6 +43,7 @@ const create = (req, res) => {
         res.json(savedUser);
 
       })
+      
     })
   })
 

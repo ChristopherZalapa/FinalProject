@@ -5,7 +5,8 @@ import UserModel from '../models/user';
 const UserForm = () => {
   const [name, setName] = useState('');
   const [bio, setBio] = useState('');
-  const [parties, setParties] = useState('');
+  const [email, setEmail] = useState('');
+  
 
   let history = useHistory();
 
@@ -14,7 +15,8 @@ const UserForm = () => {
     const temp = {
       name: name,
       bio: bio,
-      parties: parties
+      email: email,
+      
     }
     UserModel.addUser(temp).then((response) => {
       console.log(response);
@@ -28,9 +30,10 @@ const UserForm = () => {
   const bioChange = (event) => {
     setBio(event.target.value);
   }
-  const partiesChange = (event) => {
-    setParties(event.target.value);
+  const emailChange = (event) => {
+    setEmail(event.target.value);
   }
+
 
 return (
   <form onSubmit={handelSubmit}>
@@ -46,7 +49,13 @@ return (
       type = "text"
       placeholder = "Enter Bio"
     />
-    <button type = "submit" onChange = {partiesChange} className="btn btn-primary userForm">Submit</button>
+    <input 
+      onChange = { emailChange }
+      className = "userForm"
+      type = "text"
+      placeholder = "Enter Email"
+    />
+    <button type = "submit" className="btn btn-primary userForm">Submit</button>
   </form>
 )
 

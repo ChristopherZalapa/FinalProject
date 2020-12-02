@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export default function UserCard(props) {
   const [name, setName] = useState(props.user.name)
@@ -7,9 +8,11 @@ export default function UserCard(props) {
 
   return (
     <div>
+      <Link>
       <div>{ name }</div>
       <div>{ bio }</div>
       <div>{ parties }</div>
+      </Link>
     </div>
   )
 }

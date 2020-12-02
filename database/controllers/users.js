@@ -15,8 +15,8 @@ const index = (req, res) => {
 };
 
 const show = (req, res) => {
-  db.User.findById(req.params.userId)
-    .populate('parties')
+  db.User.findById(req.params.id)
+    .populate('entry')
     .exec((err, foundUser) => {
       if (err) return console.log(err);
 
