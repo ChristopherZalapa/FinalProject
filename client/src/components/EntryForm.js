@@ -58,7 +58,7 @@ const EntryForm = () => {
           type="text"
           placeholder="When:"
         />
-        <button type="submit" onChange = {buttonChange} className="btn btn-primary entryBtn">Submit</button>
+        <button type="submit" onChange = {buttonChange} className="btn btn-primary entryForm">Submit</button>
       </form>
     )
 

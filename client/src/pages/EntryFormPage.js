@@ -4,14 +4,12 @@ import EntryForm from '../components/EntryForm';
 
 const EntryFormPage = (prop) => {
 
-return (
-  <div>
-    <h1>Create New Party</h1>
-    <EntryForm />
-  </div>
-)
-
-
+  return (
+    <div>
+      <h1>Create New Party</h1>
+      <EntryForm />
+    </div>
+  )
 }
 
 export default EntryFormPage;

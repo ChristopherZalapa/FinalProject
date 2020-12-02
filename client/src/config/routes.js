@@ -4,10 +4,12 @@ import HomePage from '../pages/HomePage'
 import EntryIndex from '../pages/EntryIndex';
 import UserIndex from '../pages/UserIndex';
 import EntryFormPage from '../pages/EntryFormPage';
+import UserFormPage from '../pages/UserFormPage';
 
 export default (
   <Switch>
     <Route path = '/entries/:entry/:entryid' component = {EntryFormPage}/>
+    <Route path = '/users/:user/:userid' component = { UserFormPage } />
     <Route path = '/entries' component = {EntryIndex}/>
     <Route path = '/users' component = {UserIndex}/>
     <Route path = '/' component = {HomePage}/>
