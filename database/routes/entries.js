@@ -7,6 +7,4 @@ router.post('/',ctrl.entries.create);
 router.put('/:id',ctrl.entries.update);
 router.delete('/:id',ctrl.entries.destroy);
 
-
-
 module.exports = router;

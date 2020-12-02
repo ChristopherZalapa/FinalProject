@@ -28,16 +28,34 @@ const show = (req, res) => {
 };
 
 const create = (req, res) => {
-  db.Entry.create(req.body).then((savedEntry) => {
 
-    res.status(201).json({ entry: savedEntry });
+  db.Entry.create(req.body, (err, newEntry) => {
+    if (err) return console.log(err);
 
-  }).catch((err) => {
+    db.User.findById(req.body.user, (err, foundUser) => {
+      if (err) return console.log(err);
+      console.log(foundUser)
+      foundUser.parties.push(newEntry._id);
+      foundUser.save((err, savedUser) => {
+        if (err) return console.log(err);
 
-    console.log('Error in entry.create', err);
-    res.json({ Error: 'Unable to submit your data' })
+        res.json(savedUser);
 
-  });
+      })
+    })
+  })
+
+
+  // db.Entry.create(req.body).then((savedEntry) => {
+
+  //   res.status(201).json({ entry: savedEntry });
+
+  // }).catch((err) => {
+
+  //   console.log('Error in entry.create', err);
+  //   res.json({ Error: 'Unable to submit your data' })
+
+  // });
 
 };
 
@@ -59,6 +77,9 @@ const update = (req, res) => {
 };
 
 const destroy = (req, res) => {
+  console.log('Server Response');
+  
+
   db.Entry.findByIdAndDelete(req.params.id).then((deleteEntry) => {
     res.json({ entry: deleteEntry })
   }).catch((err) => {

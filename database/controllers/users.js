@@ -16,7 +16,7 @@ const index = (req, res) => {
 
 const show = (req, res) => {
   db.User.findById(req.params.userId)
-    .populate('entries')
+    .populate('parties')
     .exec((err, foundUser) => {
       if (err) return console.log(err);
 
@@ -33,7 +33,7 @@ const create = (req, res) => {
   db.User.create(req.body, (err, newUser) => {
     if (err) return console.log(err);
 
-    res.redirect('/users');
+    res.json(newUser);
 
   });
 };
@@ -46,7 +46,7 @@ const update = (req, res) => {
     (err, updatedUser) => {
       if (err) return console.log(err);
 
-      res.redirect(`/users/${updatedUser._id}`);
+      res.json(updatedUser);
     }
   );
 };
@@ -58,9 +58,9 @@ const destroy = (req, res) => {
     db.Entry.deleteMany({_id: { $in: deletedUser.entries }}, (err) => {
       if (err) return console.log(err)
 
-      res.redirect('/users');
+      res.json(deletedUser);
     })
-  });
+  })
 };
 
 module.exports = {
