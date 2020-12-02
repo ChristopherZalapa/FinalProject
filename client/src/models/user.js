@@ -6,6 +6,7 @@ class UserModel {
   static all = () => {
     return axios.get(endPoint);
   }
+  
 }
 
 export default UserModel;

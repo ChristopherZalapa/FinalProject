@@ -1,40 +1,126 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import EntryModel from '../models/entry';
 
-class EntryForm extends Component {
-  render() {
+const EntryForm = () => {
+  const [name, setName] = useState('');
+  const [location, setLocation] = useState('');
+  const [when, setWhen] = useState('');
+  const [attended, setAttended] = useState('');
+
+  let history = useHistory();
+
+  const handelSubmit = (event) => {
+    event.preventDefault();
+    const temp = {
+      name: name,
+      location: location,
+      when: when,
+    }
+
+    
+    EntryModel.addEntry(temp).then((response) => {
+      console.log(response);
+      history.push('/entries');
+    })
+  }
+
+    const nameChange = (event) => {
+    setName(event.target.value);
+  }
+  const locationChange = (event) => {
+    setLocation(event.target.value);
+  }
+  const whenChange = (event) => {
+    setWhen(event.target.value);
+  }
+  const buttonChange = (event) => {
+    setAttended(event.target.value);
+  }
+
     return (
-      <form className="entryForm">
+      <form onSubmit={handelSubmit} className="entryForm">
         <input
+          onChange = {nameChange}
           className="entryName"
           type="text"
           placeholder="Name:"
         />
         <input
+          onChange = {locationChange}
           className="entryLocation"
           type="text"
           placeholder="Location:"
         />
-        <input 
+        <input
+          onChange = {whenChange}
           className="entryWhen"
           type="text"
           placeholder="When:"
         />
-        
-        <button type="submit" class="btn btn-primary entryBtn">Submit</button>
-
-          {/* <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button> */}
+        <button type="submit" onChange = {buttonChange} className="btn btn-primary entryBtn">Submit</button>
       </form>
     )
-  }
+
 }
 
-
 export default EntryForm;
+
+
+
+
+
+
+// import React, { useEffect, useState } from 'react'
+
+// const EntryForm = () => {
+//   const [name, setName] = useState('');
+//   const [location, setLocation] = useState('');
+//   const [when, setWhen] = useState('');
+//   const [attended, setAttended] = useState('');
+
+//   const nameChange = (event) => {
+//     setName(event.target.value);
+//   }
+//   const locationChange = (event) => {
+//     setLocation(event.target.value);
+//   }
+//   const whenChange = (event) => {
+//     setWhen(event.target.value);
+//   }
+//   const buttonChange = (event) => {
+//     setAttended(event.target.value);
+//   }
+
+// useEffect(() => {
+
+// }, []);
+
+  
+//     return (
+//       <form className="entryForm">
+//         <input
+//           onChange = {nameChange}
+//           className="entryName"
+//           type="text"
+//           placeholder="Name:"
+//         />
+//         <input
+//           onChange = {locationChange}
+//           className="entryLocation"
+//           type="text"
+//           placeholder="Location:"
+//         />
+//         <input
+//           onChange = {whenChange}
+//           className="entryWhen"
+//           type="text"
+//           placeholder="When:"
+//         />
+//         <button type="submit" onChange = {buttonChange} className="btn btn-primary entryBtn">Submit</button>
+//       </form>
+//     )
+
+// }
+
+// export default EntryForm;
