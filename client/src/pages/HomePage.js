@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'; 
-// import EntryForm from '../components/EntryForm'
+import UserForm from '../components/UserForm'
 
 class HomePage extends Component {
   render() {
@@ -10,7 +10,7 @@ class HomePage extends Component {
         <Link to="/users">
           <button className="btn btn-primary">Create User</button>
         </Link>
-        {/* <EntryForm /> */}
+        <UserForm />
       </div>
     )
   }

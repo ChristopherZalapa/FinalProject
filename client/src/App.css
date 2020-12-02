@@ -8,11 +8,11 @@ a.nav-link {
     color: black;
 }
 
-.entryName {
+.entryForm {
     display: block;
     margin: 1em;
 }
-
+/* 
 .entryLocation {
     display: block;
     margin: 1em;
@@ -24,6 +24,11 @@ a.nav-link {
 }
 
 .entryBtn {
+    display: block;
+    margin: 1em;
+} */
+
+.userForm {
     display: block;
     margin: 1em;
 }
