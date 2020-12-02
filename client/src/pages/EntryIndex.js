@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import EntryCard from '../components/EntryCard';
 import EntryModel from '../models/entry';
+import { Link } from 'react-router-dom';
 
 export default function EntryIndex() {
   const [entries, setEntries] = useState('')
@@ -21,6 +22,9 @@ export default function EntryIndex() {
   return (
     <div>
       {entries}
+      <Link to={'/entries/:entry/:entryid'}>
+        <button>Create New Party</button>
+      </Link>
     </div>
   )
 }
