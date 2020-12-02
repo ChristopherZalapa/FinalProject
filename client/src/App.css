@@ -7,3 +7,25 @@
 a.nav-link {
     color: black;
 }
+
+
+/*  */
+.entryName {
+    display: block;
+    margin: 1em;
+}
+
+.entryLocation {
+    display: block;
+    margin: 1em;
+}
+
+.entryWhen {
+    display: block;
+    margin: 1em;
+}
+
+.entryBtn {
+    display: block;
+    margin: 1em;
+}
