@@ -45,18 +45,6 @@ const create = (req, res) => {
     })
   })
 
-
-  // db.Entry.create(req.body).then((savedEntry) => {
-
-  //   res.status(201).json({ entry: savedEntry });
-
-  // }).catch((err) => {
-
-  //   console.log('Error in entry.create', err);
-  //   res.json({ Error: 'Unable to submit your data' })
-
-  // });
-
 };
 
 const update = (req, res) => {

@@ -23,7 +23,7 @@ export default function EntryIndex() {
     <div>
       {entries}
       <Link to={'/entries/:entry/:entryid'}>
-        <button>Create New Party</button>
+        <button className="btn btn-primary">Create New Party</button>
       </Link>
     </div>
   )

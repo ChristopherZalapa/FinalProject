@@ -7,6 +7,7 @@ const EntryFormPage = (prop) => {
 return (
   <div>
     <h1>Create New Party</h1>
+    <EntryForm />
   </div>
 )
 
