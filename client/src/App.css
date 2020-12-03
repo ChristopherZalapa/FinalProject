@@ -8,12 +8,21 @@ a.nav-link {
     color: black;
 }
 
+.headingTitle {
+    
+}
+
 .entryForm {
     display: block;
     margin: 1em;
 }
 
 .userForm {
+    display: block;
+    margin: 1em;
+}
+
+.login_Form {
     display: block;
     margin: 1em;
 }

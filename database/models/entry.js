@@ -5,6 +5,10 @@ const EntrySchema = new Schema({
   name: String,
   location: String,
   when: Date,
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  },
   attended: Boolean
 },{timestamps: true});
 

@@ -6,21 +6,31 @@ const EntryForm = () => {
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
   const [when, setWhen] = useState('');
-  const [attended, setAttended] = useState('');
+
 
   let history = useHistory();
 
   const handelSubmit = (event) => {
+    console.log('This is working');
+    
     event.preventDefault();
+    // StackOverflow https://stackoverflow.com/questions/5639346/what-is-the-shortest-function-for-reading-a-cookie-by-name-in-javascript
+
+    function getCookieValue(a) {
+      var b = document.cookie.match('(^|;)\\s*' + a + '\\s*=\\s*([^;]+)');
+      return b ? b.pop() : '';
+    }
     const temp = {
       name: name,
       location: location,
       when: when,
+      user: getCookieValue('userId') 
     }
 
     
+    
     EntryModel.addEntry(temp).then((response) => {
-      console.log(response);
+      console.log("called addEntry");
       history.push('/entries');
     })
   }
@@ -34,9 +44,7 @@ const EntryForm = () => {
     const whenChange = (event) => {
       setWhen(event.target.value);
     }
-    const buttonChange = (event) => {
-      setAttended(event.target.value);
-    }
+
 
     return (
       <form onSubmit={handelSubmit}>
@@ -58,7 +66,7 @@ const EntryForm = () => {
           type="text"
           placeholder="When:"
         />
-        <button type="submit" onChange = {buttonChange} className="btn btn-primary entryForm">Submit</button>
+        <button type="submit" className="btn btn-primary entryForm">Submit</button>
       </form>
     )
 

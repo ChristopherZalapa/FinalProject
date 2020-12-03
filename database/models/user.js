@@ -7,7 +7,7 @@ const UserSchema = new Schema({
   email: {type: String, unique: true, required: true},
   parties: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'entry'
+    ref: 'Entry'
   }]
 })
 

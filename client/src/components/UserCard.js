@@ -6,9 +6,16 @@ export default function UserCard(props) {
   const [bio, setBio] = useState(props.user.bio)
   const [parties, setParties] = useState(props.user.parties)
 
+  const handelClick = (event) => {
+    event.preventDefault();
+
+    
+
+  }
+
   return (
     <div>
-      <Link>
+      <Link onClick={ handelClick } >
       <div>{ name }</div>
       <div>{ bio }</div>
       <div>{ parties }</div>

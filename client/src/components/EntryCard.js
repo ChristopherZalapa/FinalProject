@@ -1,16 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import EntryShowPage from '../pages/EntryShowPage'
 
-
-// function EntryCard(props) {
-//   return (
-//     <li>
-//       <h1>EntryCard</h1>
-//     </li>
-//   )
-// }
-
-// export default EntryCard
 export default function EntryCard(props) {
   const [name, setName] = useState(props.entry.name)
   const [location, setLocation] = useState(props.entry.location)
@@ -20,7 +11,7 @@ export default function EntryCard(props) {
 
   return (
     <div>
-      <Link to={`/`}>
+      <Link>
         <div>{ name }</div>
         <div>{ location }</div>
         <div>{ when }</div>

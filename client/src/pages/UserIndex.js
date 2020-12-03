@@ -6,23 +6,37 @@ import UserModel from '../models/user';
 export default function UserIndex() {
   const [users, setUsers] = useState('')
 
+
   useEffect(() => {
     UserModel.all().then((response) => {
-      const { users } = response.data
-      console.log(users);
-      const divUsers = users.map((user, index) => {
-        return <UserCard user={ user } key={ index } />
-      })
+      setUsers(response.data.users)
+      console.log(response.data.users);
       
-      setUsers(divUsers)
-
     })
 
-  }, [])
+  },[setUsers])
+
+  const handleClickLogin = (user) => {
+    document.cookie = `userId=${user._id}`
+    console.log(user._id);
+    
+  }
+
+  const renderUserCards = () => {
+    return users.map((user, index) => {
+      return (
+        <div>
+        <UserCard user={ user } key={ index } />
+        <button onClick={ () => handleClickLogin(user) }>Log In</button>
+        </div>
+      ) 
+    })
+    
+  }
 
   return (
     <div>
-      { users }
+      {users.length !==0 && renderUserCards()}
       <Link to={'/users/:user/:userid'} >
         <button className="btn btn-primary">Create New User</button>
       </Link>

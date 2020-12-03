@@ -8,6 +8,9 @@ class UserModel {
   }
   static addUser(obj){
     return axios.post(endPoint, obj)
+  }
+  static logInUser(email){
+    return axios.get(`${endPoint}/logIn/${email}`)
   }  
 }
 
