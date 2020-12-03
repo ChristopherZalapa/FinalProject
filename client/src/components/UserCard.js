@@ -8,20 +8,15 @@ export default function UserCard(props) {
 
   const handelClick = (event) => {
     event.preventDefault();
-
-    
-
   }
 
   return (
-    <div className="col mb-4">
-      <div className="card">
+    <div>
         <Link onClick={ handelClick } >
         <div>Name: { name }</div>
         <div>Bio: { bio }</div>
         <div>{ parties }</div>
-        </Link>
-        </div>  
+        </Link>  
     </div>
   )
 }

@@ -21,6 +21,19 @@ h1 {
     margin: 1em;
 }
 
+.userContainer {
+    display: flex;
+    width: 150px;
+    background-color: blue;
+    
+}
+
+.userCard {
+    height: 100px;
+    flex-direction: ;
+    flex: 50%;
+}
+
 /* .userForm {
     display: block;
     margin: 1em;
@@ -34,3 +47,4 @@ h1 {
 .newUserBtn {
     margin: 1em;
 }
+

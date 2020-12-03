@@ -52,14 +52,17 @@ const update = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  db.User.findByIdAndDelete(req.params.userId, (err, deletedUser) => {
-    if (err) return console.log(err);
+  console.log('Is Destroy Working?');
+  
+  db.User.findByIdAndDelete(req.params.id).then((err, deleteUser) => {
+    if (err) return console.log("Could not delete user", err)
 
-    db.Entry.deleteMany({_id: { $in: deletedUser.entries }}, (err) => {
-      if (err) return console.log(err)
+  
+    // db.Entry.deleteMany({_id: { $in: deletedUser.entries }}, (err) => {
+    //   if (err) return console.log(err)
 
-      res.json(deletedUser);
-    })
+      res.json(deleteUser);
+    // })
   })
 };
 

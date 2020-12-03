@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import EntryCard from '../components/EntryCard';
 import EntryModel from '../models/entry';
-import { Link } from 'react-router-dom';
+
 
 export default function EntryIndex() {
   const [entries, setEntries] = useState('')
@@ -32,11 +32,11 @@ export default function EntryIndex() {
   }
 
   return (
+    
     <div>
       <h1>Show User Parties</h1>
       {entries}
-      
-        <button onClick={ buttonHandler } className="btn btn-primary">Create New Party</button>
+      <button onClick={ buttonHandler } className="btn btn-dark">Create New Party</button>
       
     </div>
   )

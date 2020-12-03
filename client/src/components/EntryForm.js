@@ -27,8 +27,6 @@ const EntryForm = () => {
       user: getCookieValue('userId') 
     }
 
-    
-    
     EntryModel.addEntry(temp).then((response) => {
       console.log("called addEntry");
       history.push('/entries');

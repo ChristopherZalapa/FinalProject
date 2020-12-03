@@ -11,6 +11,9 @@ class UserModel {
   }
   static logInUser(email){
     return axios.get(`${endPoint}/logIn/${email}`)
+  }
+  static deleteUser(remove){
+    return axios.get(endPoint, remove)
   }  
 }
 

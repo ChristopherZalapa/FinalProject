@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import EntryShowPage from '../pages/EntryShowPage'
 
 export default function EntryCard(props) {
@@ -8,10 +8,13 @@ export default function EntryCard(props) {
   const [when, setWhen] = useState(props.entry.when)
   const [attended, setAttended] = useState(props.entry.attended)
 
+  console.log("Help me Please" ,props);
+  
 
   return (
     <div>
-      <Link to={`/entries/${props.entry._id}`}>
+      <Route  path = '/entries/:id' render={() => <EntryShowPage entry={props.entry} /> }  />
+      <Link  to={`/entries/${props.entry._id}`}>
         <div>{ name }</div>
         <div>{ location }</div>
         <div>{ when }</div>
