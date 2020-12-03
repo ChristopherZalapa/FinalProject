@@ -36,7 +36,7 @@ export default function EntryIndex() {
     <div>
       <h1>Show User Parties</h1>
       {entries}
-      <button onClick={ buttonHandler } className="btn btn-dark">Create New Party</button>
+      <button onClick={ buttonHandler } className="btn btn-dark createButtons">Create New Party</button>
       
     </div>
   )

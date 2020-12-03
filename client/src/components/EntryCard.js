@@ -12,7 +12,7 @@ export default function EntryCard(props) {
   
 
   return (
-    <div>
+    <div className="userContainer">
       <Route  path = '/entries/:id' render={() => <EntryShowPage entry={props.entry} /> }  />
       <Link  to={`/entries/${props.entry._id}`}>
         <div>{ name }</div>

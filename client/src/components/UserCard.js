@@ -12,11 +12,13 @@ export default function UserCard(props) {
 
   return (
     <div>
-        <Link onClick={ handelClick } >
-        <div>Name: { name }</div>
-        <div>Bio: { bio }</div>
-        <div>{ parties }</div>
-        </Link>  
+      <div className="userContainer">
+          <Link onClick={ handelClick } >
+          <div>Name: { name }</div>
+          <div>Bio: { bio }</div>
+          <div>{ parties }</div>
+          </Link>  
+      </div>
     </div>
   )
 }

@@ -17,22 +17,34 @@ h1 {
 }
 
 .entryForm {
-    display: block;
+   flex-direction: row;
     margin: 1em;
 }
 
+.stackCards {
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+}
+
 .userContainer {
+    position: relative;
     display: flex;
     width: 150px;
-    background-color: blue;
+    height: 130px;
+    margin: 25px;
+    background-color: #d3d3d3;
     
 }
 
-.userCard {
-    height: 100px;
-    flex-direction: ;
-    flex: 50%;
+.mainContainer {
+    flex-direction: row;
 }
+
+/* .userCard {
+    margin: 15px;
+    width: 150px;
+} */
 
 /* .userForm {
     display: block;
