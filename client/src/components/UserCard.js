@@ -14,12 +14,14 @@ export default function UserCard(props) {
   }
 
   return (
-    <div>
-      <Link onClick={ handelClick } >
-      <div>{ name }</div>
-      <div>{ bio }</div>
-      <div>{ parties }</div>
-      </Link>
+    <div className="col mb-4">
+      <div className="card">
+        <Link onClick={ handelClick } >
+        <div>Name: { name }</div>
+        <div>Bio: { bio }</div>
+        <div>{ parties }</div>
+        </Link>
+        </div>  
     </div>
   )
 }

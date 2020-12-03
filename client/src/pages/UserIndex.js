@@ -25,9 +25,13 @@ export default function UserIndex() {
   const renderUserCards = () => {
     return users.map((user, index) => {
       return (
-        <div>
-        <UserCard user={ user } key={ index } />
-        <button onClick={ () => handleClickLogin(user) }>Log In</button>
+        <div className="container">
+            <div className="row row-cols-1 row-cols-md-3">
+          <div className="card">
+              <UserCard user={ user } key={ index } />
+              <button className="btn btn-dark" onClick={ () => handleClickLogin(user) }>Log In</button>
+            </div>  
+          </div>
         </div>
       ) 
     })
@@ -36,9 +40,10 @@ export default function UserIndex() {
 
   return (
     <div>
+    <h1>Show All Users</h1>
       {users.length !==0 && renderUserCards()}
       <Link to={'/users/:user/:userid'} >
-        <button className="btn btn-primary">Create New User</button>
+        <button className="btn btn-primary newUserBtn">Create New User</button>
       </Link>
     </div>
   )

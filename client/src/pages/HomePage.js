@@ -7,7 +7,7 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <h1 className="headingTitle">Welcome To Party Bucket List</h1>
+        <h1>Welcome To Party Bucket List</h1>
       </div>
     )
   }

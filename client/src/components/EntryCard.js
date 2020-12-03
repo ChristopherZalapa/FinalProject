@@ -11,7 +11,7 @@ export default function EntryCard(props) {
 
   return (
     <div>
-      <Link>
+      <Link to={`/entries/${props.entry._id}`}>
         <div>{ name }</div>
         <div>{ location }</div>
         <div>{ when }</div>

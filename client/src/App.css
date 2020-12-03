@@ -8,8 +8,12 @@ a.nav-link {
     color: black;
 }
 
-.headingTitle {
-    
+a {
+    color: black;
+}
+
+h1 {
+    text-align: center;
 }
 
 .entryForm {
@@ -17,12 +21,16 @@ a.nav-link {
     margin: 1em;
 }
 
-.userForm {
+/* .userForm {
+    display: block;
+    margin: 1em;
+} */
+
+.login_Form {
     display: block;
     margin: 1em;
 }
 
-.login_Form {
-    display: block;
+.newUserBtn {
     margin: 1em;
 }

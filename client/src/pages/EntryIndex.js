@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import EntryCard from '../components/EntryCard';
 import EntryModel from '../models/entry';
 import { Link } from 'react-router-dom';
 
 export default function EntryIndex() {
   const [entries, setEntries] = useState('')
-
+  let history = useHistory();
     // StackOverflow https://stackoverflow.com/questions/5639346/what-is-the-shortest-function-for-reading-a-cookie-by-name-in-javascript
 
   function getCookieValue(a) {
@@ -26,12 +27,17 @@ export default function EntryIndex() {
     })
   }, [])
 
+  const buttonHandler = () => {
+    history.push('/entriesForm')
+  }
+
   return (
     <div>
+      <h1>Show User Parties</h1>
       {entries}
-      <Link to={'/entries/:entry/:entryid'}>
-        <button className="btn btn-primary">Create New Party</button>
-      </Link>
+      
+        <button onClick={ buttonHandler } className="btn btn-primary">Create New Party</button>
+      
     </div>
   )
 }

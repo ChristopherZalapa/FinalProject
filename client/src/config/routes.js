@@ -9,8 +9,8 @@ import EntryShowPage from '../pages/EntryShowPage'
 
 export default (
   <Switch>
-    <Route path = '/entries/:entry/id' component = {EntryShowPage}/>
-    <Route path = '/entries/:entry/:entryid' component = {EntryFormPage}/>
+    <Route path = '/entries/:id' component = {EntryShowPage}/>
+    <Route path = '/entriesForm' component = {EntryFormPage}/>
     <Route path = '/users/:user/:userid' component = { UserFormPage } />
     <Route path = '/entries' component = {EntryIndex}/>
     <Route path = '/users' component = {UserIndex}/>
