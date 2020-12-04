@@ -2,34 +2,47 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: white;
+}
+
+html {
+    height: 100%;
 }
 
 body {
-    background-color: gray;
+    background-color: #2D2D2D;
+    height: 100%;
+}
+
+.djBooth {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
 }
 
 a.nav-link {
-    color: black;
+    color: white;
     font-family: 'Raleway', sans-serif;
     font-weight: lighter;
     
 }
 
 a.navbar-brand.logo {
+    color: white;
     font-family: 'Megrim', cursive;
     font-size: xx-large;
 }
 
 a {
-    color: black;
+    color: white;
 }
 
 h1 {
     text-align: center;
     font-family: 'Megrim', cursive;
     font-weight: lighter;
-    margin-top: 100px;
-
 }
 
 .entryForm {
@@ -42,12 +55,66 @@ h1 {
     margin: 1em;
 }
 
+div.userText {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: lighter;
+    
+
+}
+
+input.userForm {
+    color: black;
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .login_Form {
     display: block;
     margin: 1em;
 }
 
-.newUserBtn {
-    margin: 1em;
+.mainUserCont {
+    margin: 3em;
+    
 }
 
+.userPageCenter {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inputFormCenter {
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button.btn.btn-dark.newUserBtn {
+    margin: 3em;
+    font-weight: lighter; 
+    color: white;
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    border-color: white;    
+}
+
+button.btn.btn-dark.home {
+    font-weight: lighter; 
+    color: white;
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    border-color: white;
+}

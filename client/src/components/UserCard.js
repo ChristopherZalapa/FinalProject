@@ -12,7 +12,7 @@ export default function UserCard(props) {
 
   return (
     <div>
-      <div className="userContainer">
+      <div>
           <Link onClick={ handelClick } >
           <div>Name: { name }</div>
           <div>Bio: { bio }</div>

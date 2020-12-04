@@ -64,7 +64,7 @@ const EntryForm = () => {
           type="text"
           placeholder="When:"
         />
-        <button type="submit" className="btn btn-dark entryForm">Submit</button>
+        <button type="submit" className="btn btn-dark newUserBtn">Submit</button>
       </form>
     )
 

@@ -29,7 +29,7 @@ export default function EntryIndex() {
 
   const buttonHandler = () => {
     history.push('/entriesForm')
-  }
+  } 
 
   // const divEntries = entries.map((entry, index) => {
   //   return <EntryCard entry={entry} key={index} />

@@ -25,13 +25,11 @@ export default function UserIndex() {
   const renderUserCards = () => {
     return users.map((user, index) => {
       return (
-        <div>
-          <div>
-            <div>
+        <div className="mainUserCont">
+            <div className="userText">
                 <UserCard user={ user } key={ index } />
             </div>
-                <button className="btn btn-dark" onClick={ () => handleClickLogin(user) }>Log In</button> 
-          </div>
+                <button className="btn btn-dark newUserBtn" onClick={ () => handleClickLogin(user) }>Log In</button> 
         </div>
       ) 
     })
@@ -40,10 +38,12 @@ export default function UserIndex() {
   return (
     <div>
     <h1>Show All Users</h1>
-      {users.length !==0 && renderUserCards()}
-      <Link to={'/users/:user/:userId'} >
-        <button className="btn btn-dark newUserBtn">Create New User</button>
-      </Link>
+      <div className="userPageCenter">
+        {users.length !==0 && renderUserCards()}
+        <Link to={'/users/:user/:userId'} >
+          <button className="btn btn-dark newUserBtn">Create New User</button>
+        </Link>
+      </div>
     </div>
   )
 }

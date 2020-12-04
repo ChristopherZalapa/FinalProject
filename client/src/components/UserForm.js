@@ -36,7 +36,7 @@ const UserForm = () => {
 
 
 return (
-  <form onSubmit={handelSubmit}>
+  <form className="inputFormCenter" onSubmit={handelSubmit}>
     <input 
       onChange = {nameChange}
       className = "userForm"
@@ -55,7 +55,7 @@ return (
       type = "text"
       placeholder = "Enter Email"
     />
-    <button type = "submit" className="btn btn-dark userForm">Submit</button>
+    <button type = "submit" className="btn btn-dark newUserBtn">Submit</button>
   </form>
 )
 
