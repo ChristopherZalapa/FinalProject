@@ -29,7 +29,7 @@ export default function EntryIndex() {
 
   const buttonHandler = () => {
     history.push('/entriesForm')
-  } 
+  }
 
   // const divEntries = entries.map((entry, index) => {
   //   return <EntryCard entry={entry} key={index} />
@@ -53,11 +53,13 @@ export default function EntryIndex() {
     
     <div>
       <h1>Show User Parties</h1>
+
+      
       {entries.map((entry) => {
         return (
           <div>
             <Link to={'/entryshowpage/'+entry._id}>{entry.name}</Link>
-            <button onClick={() => deleteParty(entry._id)}>Delete</button>
+            <button className="btn btn-dark " onClick={() => deleteParty(entry._id)}>Delete</button>
           </div>
         )
       })}

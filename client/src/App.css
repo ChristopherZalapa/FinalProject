@@ -59,8 +59,12 @@ div.userText {
     color: white;
     font-family: 'Raleway', sans-serif;
     font-weight: lighter;
-    
+}
 
+a {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: lighter;
 }
 
 input.userForm {
@@ -78,6 +82,7 @@ input.userForm {
 
 .mainUserCont {
     margin: 3em;
+    text-align: center;
     
 }
 
@@ -115,6 +120,22 @@ button.btn.btn-dark.home {
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
+    background-color: transparent;
+    border-color: white;
+}
+
+button.btn.btn-dark.deletePartyBtn {
+    font-weight: lighter; 
+    color: white;
+    display: block;
+    background-color: transparent;
+    border-color: white;
+}
+
+button.btn.btn-dark.logInBtn {
+    font-weight: lighter; 
+    color: white;
+    margin-top: 15px;
     background-color: transparent;
     border-color: white;
 }

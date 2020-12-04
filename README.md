@@ -1,5 +1,9 @@
 # Party Bucket List
 
+---
+
+![img](images/first.png)
+
 ## User Story
 
 * Welcome to Party Bucket List. 
