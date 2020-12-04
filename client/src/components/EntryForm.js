@@ -48,23 +48,23 @@ const EntryForm = () => {
       <form onSubmit={handelSubmit}>
         <input
           onChange = {nameChange}
-          className="entryForm"
+          className="userForm"
           type="text"
           placeholder="Name:"
         />
         <input
           onChange = {locationChange}
-          className="entryForm"
+          className="userForm"
           type="text"
           placeholder="Location:"
         />
         <input
           onChange = {whenChange}
-          className="entryForm"
+          className="userForm"
           type="text"
           placeholder="When:"
         />
-        <button type="submit" className="btn btn-primary entryForm">Submit</button>
+        <button type="submit" className="btn btn-dark entryForm">Submit</button>
       </form>
     )
 

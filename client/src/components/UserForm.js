@@ -55,7 +55,7 @@ return (
       type = "text"
       placeholder = "Enter Email"
     />
-    <button type = "submit" className="btn btn-primary userForm">Submit</button>
+    <button type = "submit" className="btn btn-dark userForm">Submit</button>
   </form>
 )
 

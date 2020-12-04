@@ -8,6 +8,12 @@ class HomePage extends Component {
     return (
       <div>
         <h1>Welcome To Party Bucket List</h1>
+        <div>
+          <img src="" alt=""/>
+        </div>
+        <Link to='/users/:user/:userId'>
+          <button className="btn btn-dark">Create New User</button>
+        </Link>
       </div>
     )
   }

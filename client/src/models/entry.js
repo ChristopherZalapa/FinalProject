@@ -14,7 +14,9 @@ class EntryModel {
   static byId(id){
     return axios.get(`${endPoint}/${id}`)
   }
-  static
+  static deleteParty(id){
+    return axios.delete(`${endPoint}/${id}`)
+  }
 }
 
 export default EntryModel;

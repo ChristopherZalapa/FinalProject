@@ -4,8 +4,20 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: gray;
+}
+
 a.nav-link {
     color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: lighter;
+    
+}
+
+a.navbar-brand.logo {
+    font-family: 'Megrim', cursive;
+    font-size: xx-large;
 }
 
 a {
@@ -14,42 +26,21 @@ a {
 
 h1 {
     text-align: center;
+    font-family: 'Megrim', cursive;
+    font-weight: lighter;
+    margin-top: 100px;
+
 }
 
 .entryForm {
-   flex-direction: row;
+    flex-direction: row;
     margin: 1em;
 }
 
-.stackCards {
-    display: flex;
-    flex-direction: row;
-    height: 150px;
-}
-
-.userContainer {
-    position: relative;
-    display: flex;
-    width: 150px;
-    height: 130px;
-    margin: 25px;
-    background-color: #d3d3d3;
-    
-}
-
-.mainContainer {
-    flex-direction: row;
-}
-
-/* .userCard {
-    margin: 15px;
-    width: 150px;
-} */
-
-/* .userForm {
+.userForm {
     display: block;
     margin: 1em;
-} */
+}
 
 .login_Form {
     display: block;

@@ -27,7 +27,7 @@ export default function UserIndex() {
       return (
         <div>
           <div>
-            <div className="userCard">
+            <div>
                 <UserCard user={ user } key={ index } />
             </div>
                 <button className="btn btn-dark" onClick={ () => handleClickLogin(user) }>Log In</button> 

@@ -35,18 +35,18 @@ const create = (req, res) => {
     console.log("new entry Created");
     
     
-    // db.User.findById(req.body.user, (err, foundUser) => {
-    //   if (err) return console.log(err);
-    //   console.log(foundUser)
-    //   foundUser.parties.push(newEntry._id);
-    //   foundUser.save((err, savedUser) => {
-    //     if (err) return console.log(err);
+    db.User.findById(req.body.user, (err, foundUser) => {
+      if (err) return console.log(err);
+      console.log(foundUser)
+      foundUser.parties.push(newEntry._id);
+      foundUser.save((err, savedUser) => {
+        if (err) return console.log(err);
 
-    //     res.json(savedUser);
+        res.json(savedUser);
 
-    //   })
+      })
       
-    // })
+    })
   })
 
 };
